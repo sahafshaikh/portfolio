@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahaf Shaikh - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for additional icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Sahaf Shaikh</h3>
+            <button id="sidebarClose" class="sidebar-close" aria-label="Close Sidebar">
+                <i class="bi bi-x"></i>
+            </button>
+        </div>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a href="#home" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link"><i class="bi bi-person"></i> About</a></li>
+            <li class="nav-item"><a href="#resume" class="nav-link"><i class="bi bi-file-text"></i> Resume</a></li>
+            <li class="nav-item"><a href="#skills" class="nav-link"><i class="bi bi-gear"></i> Skills</a></li>
+            <li class="nav-item"><a href="#projects" class="nav-link"><i class="bi bi-briefcase"></i> Projects</a></li>
+            <li class="nav-item"><a href="#testimonials" class="nav-link"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
+            <li class="nav-item"><a href="#blog" class="nav-link"><i class="bi bi-journal"></i> Blog</a></li>
+            <li class="nav-item"><a href="#fun-facts" class="nav-link"><i class="bi bi-emoji-smile"></i> Fun Facts</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-link"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Toggles -->
+    <button id="sidebarToggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
+        <i class="bi bi-list"></i>
+    </button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+        <i class="bi bi-moon-stars"></i>
+    </button>
+    
+    <a href="#" id="backToTop" class="back-to-top" aria-label="Back to Top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6 order-lg-2 text-center">
+                    <div class="hero-image-container">
+                        <canvas id="heroImage" class="hero-image" width="400" height="400"></canvas>
+                        <div class="hero-image-glow"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="hero-content">
+                        <div class="hero-greeting">Hello, I'm</div>
+                        <h1 class="hero-title">Sahaf <span class="text-accent">Shaikh</span></h1>
+                        <h2 class="hero-subtitle">I am a <span id="typed" class="text-accent"></span></h2>
+                        <p class="hero-description">
+                            Passionate full-stack developer creating innovative web solutions with modern technologies. 
+                            I specialize in building scalable applications using Django, JavaScript, and cutting-edge web frameworks.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary me-3">
+                                <i class="bi bi-briefcase me-2"></i>View My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-secondary">
+                                <i class="bi bi-envelope me-2"></i>Get In Touch
+                            </a>
+                        </div>
+                        <div class="hero-social mt-4">
+                            <a href="https://linkedin.com/in/sahafshaikh" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/sahaf-shaikh" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:sahafshk2209@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">About Me</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <div class="about-image-container">
+                        <canvas id="aboutImage" class="about-image" width="300" height="300"></canvas>
+                        <div class="about-image-border"></div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-content">
+                        <h3 class="mb-3">Web Developer & Problem Solver</h3>
+                        <p class="mb-3">
+                            Recent graduate eager to contribute to innovative projects. Skilled in delivering tasks on time, 
+                            both independently and in teams. Dependable, adaptable, and committed to professional growth.
+                        </p>
+                        <p class="mb-4">
+                            Fluent in Gujarati (Native), English, and Hindi. Passionate about building web solutions 
+                            and solving complex problems through code. I enjoy working with modern technologies and 
+                            creating user-friendly applications.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="about-list">
+                                    <li><strong>Name:</strong> Sahaf Shaikh</li>
+                                    <li><strong>Location:</strong> Kapadwanj, Gujarat</li>
+                                    <li><strong>Phone:</strong> +91 6359089208</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="about-list">
+                                    <li><strong>Email:</strong> sahafshaikh786@gmail.com</li>
+                                    <li><strong>Degree:</strong> Bachelor of Computer Applications</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section-padding bg-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Resume</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="resume-section-title">
+                        <i class="bi bi-mortarboard me-2"></i>Education
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Bachelor of Computer Applications (BCA)</h4>
+                                <h5>Vinayaka College Of IT & Management, Nadiad</h5>
+                                <span class="timeline-date">2023 - 2025</span>
+                                <p>Graduated with 6.34 GPA. Studied software development, web technologies, database management, and programming fundamentals.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Higher Secondary Education</h4>
+                                <h5>Science Stream</h5>
+                                <span class="timeline-date">2021 - 2022</span>
+                                <p>Completed higher secondary education with focus on Mathematics and Computer Science.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="resume-section-title">
+                        <i class="bi bi-briefcase me-2"></i>Experience
+                    </h3>
+                    
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h4>Web Development Intern</h4>
+                                <h5>Local Tech Company</h5>
+                                <span class="timeline-date">2021 - 2022</span>
+                                <p>Gained hands-on experience in web development, worked on real projects, and learned industry best practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="#" class="btn btn-primary">
+                        <i class="bi bi-download me-2"></i>Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">My Skills</h2>
+                    <p class="section-subtitle">Here are some of the technologies and tools I work with</p>
+                </div>
+            </div>
+            
+            <!-- Skill Categories -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="skill-categories">
+                        <button class="skill-category-btn active" data-category="all">All Skills</button>
+                        <button class="skill-category-btn" data-category="programming">Programming</button>
+                        <button class="skill-category-btn" data-category="web">Web Technologies</button>
+                        <button class="skill-category-btn" data-category="database">Database</button>
+                        <button class="skill-category-btn" data-category="tools">Tools & Others</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="skill-section programming" data-category="programming">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="skills-category-title">
+                            <i class="fas fa-code me-2"></i>Programming Languages
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="90">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-java"></i>
+                                        </div>
+                                        <div class="circle-percentage">90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Java</h5>
+                            <p class="skill-description">Object-oriented programming, Spring Framework</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="85">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-python"></i>
+                                        </div>
+                                        <div class="circle-percentage">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Python</h5>
+                            <p class="skill-description">Django, Flask, Data Analysis</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="80">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-js-square"></i>
+                                        </div>
+                                        <div class="circle-percentage">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">JavaScript</h5>
+                            <p class="skill-description">ES6+, Node.js, React</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="75">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <div class="circle-percentage">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">C/C++</h5>
+                            <p class="skill-description">System Programming, Algorithms</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="70">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-microsoft"></i>
+                                        </div>
+                                        <div class="circle-percentage">70%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">C#</h5>
+                            <p class="skill-description">.NET Framework, ASP.NET</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="65">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-php"></i>
+                                        </div>
+                                        <div class="circle-percentage">65%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">PHP</h5>
+                            <p class="skill-description">Laravel, CodeIgniter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Technologies -->
+            <div class="skill-section web" data-category="web">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="skills-category-title">
+                            <i class="fas fa-globe me-2"></i>Web Technologies
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="95">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-html5"></i>
+                                        </div>
+                                        <div class="circle-percentage">95%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">HTML5</h5>
+                            <p class="skill-description">Semantic HTML, Accessibility</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="90">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-css3-alt"></i>
+                                        </div>
+                                        <div class="circle-percentage">90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">CSS3</h5>
+                            <p class="skill-description">Flexbox, Grid, Animations</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="85">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-bootstrap"></i>
+                                        </div>
+                                        <div class="circle-percentage">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Bootstrap</h5>
+                            <p class="skill-description">Responsive Design, Components</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="80">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-react"></i>
+                                        </div>
+                                        <div class="circle-percentage">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">React</h5>
+                            <p class="skill-description">Hooks, Context API, Redux</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="75">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-node-js"></i>
+                                        </div>
+                                        <div class="circle-percentage">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Node.js</h5>
+                            <p class="skill-description">Express.js, REST APIs</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="80">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-django"></i>
+                                        </div>
+                                        <div class="circle-percentage">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Django</h5>
+                            <p class="skill-description">MVT Pattern, REST Framework</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database -->
+            <div class="skill-section database" data-category="database">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="skills-category-title">
+                            <i class="fas fa-database me-2"></i>Database Technologies
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="85">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fas fa-database"></i>
+                                        </div>
+                                        <div class="circle-percentage">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">MySQL</h5>
+                            <p class="skill-description">Complex Queries, Optimization</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="80">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fas fa-database"></i>
+                                        </div>
+                                        <div class="circle-percentage">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">SQLite3</h5>
+                            <p class="skill-description">Embedded Database, Mobile Apps</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="70">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fas fa-leaf"></i>
+                                        </div>
+                                        <div class="circle-percentage">70%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">MongoDB</h5>
+                            <p class="skill-description">NoSQL, Document Database</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="75">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fas fa-elephant"></i>
+                                        </div>
+                                        <div class="circle-percentage">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">PostgreSQL</h5>
+                            <p class="skill-description">Advanced SQL, JSON Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Others -->
+            <div class="skill-section tools" data-category="tools">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="skills-category-title">
+                            <i class="fas fa-tools me-2"></i>Tools & Others
+                        </h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="90">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-git-alt"></i>
+                                        </div>
+                                        <div class="circle-percentage">90%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Git</h5>
+                            <p class="skill-description">Version Control, Collaboration</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="85">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-github"></i>
+                                        </div>
+                                        <div class="circle-percentage">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">GitHub</h5>
+                            <p class="skill-description">Repository Management, CI/CD</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="80">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fas fa-code"></i>
+                                        </div>
+                                        <div class="circle-percentage">80%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">VS Code</h5>
+                            <p class="skill-description">Extensions, Debugging</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="75">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-docker"></i>
+                                        </div>
+                                        <div class="circle-percentage">75%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Docker</h5>
+                            <p class="skill-description">Containerization, Deployment</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="70">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-aws"></i>
+                                        </div>
+                                        <div class="circle-percentage">70%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">AWS</h5>
+                            <p class="skill-description">EC2, S3, Lambda</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="skill-item">
+                            <div class="skill-circle">
+                                <div class="circle-progress" data-percentage="85">
+                                    <div class="circle-inner">
+                                        <div class="circle-icon">
+                                            <i class="fab fa-figma"></i>
+                                        </div>
+                                        <div class="circle-percentage">85%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5 class="skill-name">Figma</h5>
+                            <p class="skill-description">UI/UX Design, Prototyping</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Projects</h2>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="portfolio-filter text-center">
+                        <button class="filter-btn active" data-filter="*">All</button>
+                        <button class="filter-btn" data-filter=".web">Web</button>
+                        <button class="filter-btn" data-filter=".django">Django</button>
+                        <button class="filter-btn" data-filter=".ecommerce">E-commerce</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row portfolio-grid">
+                <div class="col-lg-6 col-md-6 mb-4 portfolio-item web django">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <canvas class="project-canvas" width="400" height="250" data-text="Job Portal"></canvas>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Online Job Portal</h4>
+                            <p>A comprehensive platform connecting job seekers with employers, featuring advanced search and filtering capabilities.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">SQLite3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4 portfolio-item web django ecommerce">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <canvas class="project-canvas" width="400" height="250" data-text="Gym System"></canvas>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Gym Management & E-commerce</h4>
+                            <p>Complete gym management system with membership tracking and integrated e-commerce store for fitness products.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">SQLite3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4 portfolio-item web">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <canvas class="project-canvas" width="400" height="250" data-text="Portfolio"></canvas>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Personal Portfolio</h4>
+                            <p>Responsive portfolio website showcasing projects and skills with modern design and smooth animations.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4 portfolio-item web django">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <canvas class="project-canvas" width="400" height="250" data-text="Blog System"></canvas>
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Blog Management System</h4>
+                            <p>Full-featured blog platform with user authentication, content management, and comment system.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal1Label">Online Job Portal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <canvas class="img-fluid mb-3 modal-canvas" width="600" height="300" data-text="Job Portal Details"></canvas>
+                    <h6>Project Overview</h6>
+                    <p>A comprehensive job portal that connects job seekers with employers. The platform features advanced search capabilities, user profiles, application tracking, and employer dashboard.</p>
+                    <h6>Key Features</h6>
+                    <ul>
+                        <li>User registration and authentication</li>
+                        <li>Job posting and management</li>
+                        <li>Advanced search and filtering</li>
+                        <li>Application tracking system</li>
+                        <li>Employer dashboard</li>
+                        <li>Resume upload and management</li>
+                    </ul>
+                    <h6>Technologies Used</h6>
+                    <p><strong>Backend:</strong> Django, Python<br>
+                    <strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap<br>
+                    <strong>Database:</strong> SQLite3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModal2Label">Gym Management & E-commerce</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <canvas class="img-fluid mb-3 modal-canvas" width="600" height="300" data-text="Gym System Details"></canvas>
+                    <h6>Project Overview</h6>
+                    <p>A complete gym management system combined with an e-commerce platform for selling fitness products and supplements.</p>
+                    <h6>Key Features</h6>
+                    <ul>
+                        <li>Membership management</li>
+                        <li>Payment tracking</li>
+                        <li>Trainer scheduling</li>
+                        <li>E-commerce store</li>
+                        <li>Inventory management</li>
+                        <li>Member dashboard</li>
+                    </ul>
+                    <h6>Technologies Used</h6>
+                    <p><strong>Backend:</strong> Django, Python<br>
+                    <strong>Frontend:</strong> HTML5, CSS3, JavaScript, Bootstrap<br>
+                    <strong>Database:</strong> SQLite3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Testimonials</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="swiper testimonial-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-content">
+                                        <i class="bi bi-quote testimonial-quote"></i>
+                                        <p>"Sahaf delivered an exceptional job portal that exceeded our expectations. His attention to detail and technical expertise made the project a huge success."</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <canvas class="testimonial-avatar" width="60" height="60" data-text="JD"></canvas>
+                                        <div class="author-info">
+                                            <h5>John Doe</h5>
+                                            <span>CEO, TechCorp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-content">
+                                        <i class="bi bi-quote testimonial-quote"></i>
+                                        <p>"The gym management system Sahaf built for us has streamlined our operations significantly. Professional work and great communication throughout the project."</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <canvas class="testimonial-avatar" width="60" height="60" data-text="JS"></canvas>
+                                        <div class="author-info">
+                                            <h5>Jane Smith</h5>
+                                            <span>Manager, FitZone Gym</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-content">
+                                        <i class="bi bi-quote testimonial-quote"></i>
+                                        <p>"Working with Sahaf was a pleasure. He understood our requirements perfectly and delivered a robust solution on time. Highly recommended!"</p>
+                                    </div>
+                                    <div class="testimonial-author">
+                                        <canvas class="testimonial-avatar" width="60" height="60" data-text="MJ"></canvas>
+                                        <div class="author-info">
+                                            <h5>Mike Johnson</h5>
+                                            <span>Founder, StartupXYZ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section-padding bg-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Latest Blog Posts</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <canvas class="blog-canvas" width="400" height="250" data-text="Django"></canvas>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="bi bi-calendar3"></i> Jan 15, 2024</span>
+                                <span class="blog-category">Web Development</span>
+                            </div>
+                            <h4><a href="#">Building Scalable Web Apps with Django</a></h4>
+                            <p>Exploring Django's powerful features for creating robust, scalable web applications. Learn best practices and advanced techniques.</p>
+                            <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <canvas class="blog-canvas" width="400" height="250" data-text="JavaScript"></canvas>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="bi bi-calendar3"></i> Jan 10, 2024</span>
+                                <span class="blog-category">JavaScript</span>
+                            </div>
+                            <h4><a href="#">Modern JavaScript ES6+ Features</a></h4>
+                            <p>Dive into the latest JavaScript features that make development more efficient and code more readable. Essential for modern web development.</p>
+                            <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <canvas class="blog-canvas" width="400" height="250" data-text="Database"></canvas>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date"><i class="bi bi-calendar3"></i> Jan 5, 2024</span>
+                                <span class="blog-category">Database</span>
+                            </div>
+                            <h4><a href="#">Database Optimization Techniques</a></h4>
+                            <p>Learn how to optimize database queries and improve application performance with proven techniques and best practices.</p>
+                            <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section id="fun-facts" class="section-padding fun-facts-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Fun Facts</h2>
+                    <p class="section-subtitle">Some interesting numbers about my journey</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="1500" data-suffix="+">0</h3>
+                            <p class="fact-label">Hours of Coding</p>
+                            <span class="fact-description">Dedicated time spent on programming and development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="25" data-suffix="+">0</h3>
+                            <p class="fact-label">Projects Completed</p>
+                            <span class="fact-description">Successfully delivered web applications and solutions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="800" data-suffix="+">0</h3>
+                            <p class="fact-label">Cups of Coffee</p>
+                            <span class="fact-description">Fuel for late-night coding sessions</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="15" data-suffix="+">0</h3>
+                            <p class="fact-label">Happy Clients</p>
+                            <span class="fact-description">Satisfied customers and successful collaborations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="8" data-suffix="+">0</h3>
+                            <p class="fact-label">Programming Languages</p>
+                            <span class="fact-description">Different technologies mastered</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="50" data-suffix="+">0</h3>
+                            <p class="fact-label">Courses Completed</p>
+                            <span class="fact-description">Online certifications and learning achievements</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="3" data-suffix="+">0</h3>
+                            <p class="fact-label">Years Experience</p>
+                            <span class="fact-description">Professional development and freelancing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                    <div class="fact-item">
+                        <div class="fact-icon-container">
+                            <div class="fact-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="fact-circle"></div>
+                        </div>
+                        <div class="fact-content">
+                            <h3 class="counter" data-target="98" data-suffix="%">0</h3>
+                            <p class="fact-label">Client Satisfaction</p>
+                            <span class="fact-description">Positive feedback and repeat customers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fun-facts-bg"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mb-4">
+                    <div class="contact-form-wrapper">
+                        <h3 class="mb-4">Send Me a Message</h3>
+                        <form id="contactForm" class="contact-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                    <div class="invalid-feedback">Please enter a valid email.</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                <div class="invalid-feedback">Please enter a subject.</div>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                <div class="invalid-feedback">Please enter your message.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-send me-2"></i>Send Message
+                            </button>
+                        </form>
+                        <div id="formFeedback" class="mt-3"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-info">
+                        <h3 class="mb-4">Contact Information</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-geo-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Location</h5>
+                                <p>Kapadwanj, Gujarat, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email</h5>
+                                <p><a href="mailto:sahafshaikh786@gmail.com">sahafshaikh786@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Phone</h5>
+                                <p><a href="tel:+916359089208">+91 6359089208</a></p>
+                            </div>
+                        </div>
+                        <div class="social-links mt-4">
+                            <h5>Follow Me</h5>
+                            <div class="social-icons">
+                                <a href="https://linkedin.com/in/sahafshaikh" target="_blank" class="social-link">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/sahaf-shaikh" target="_blank" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="mailto:sahafshaikh786@gmail.com" class="social-link">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div id="map" class="contact-map"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Sahaf Shaikh. All rights reserved. Made with <i class="bi bi-heart-fill text-danger"></i> by Sahaf Shaikh</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
